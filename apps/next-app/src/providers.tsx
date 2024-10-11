@@ -9,13 +9,15 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         <>
             <SessionProvider>
                 <QueryClientProvider client={queryClient}>
-                    <NextThemeProvider 
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem
-                        disableTransitionOnChange>
-                        <RecoilRoot>{children}</RecoilRoot>
-                    </NextThemeProvider>
+                    <RecoilRoot>
+                        <NextThemeProvider
+                            attribute="class"
+                            defaultTheme="system"
+                            enableSystem
+                            disableTransitionOnChange>
+                            {children}
+                        </NextThemeProvider>
+                    </RecoilRoot>
                 </QueryClientProvider>
             </SessionProvider>
         </>

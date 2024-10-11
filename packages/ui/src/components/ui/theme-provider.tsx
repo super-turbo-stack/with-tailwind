@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
-import { type ThemeProviderProps } from "next-themes/dist/types"
+import { type ThemeProviderProps as NextThemeProviderProps } from "next-themes/dist/types"
 
 type Theme = "dark" | "light" | "system"
 
@@ -74,6 +74,6 @@ export const useTheme = () => {
   return context
 }
 
-export function NextThemeProvider({ children, ...props }: ThemeProviderProps) {
+export function NextThemeProvider({ children, ...props }: NextThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>
 }
